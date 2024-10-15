@@ -1,0 +1,18 @@
+{% extends './base.html' %}
+{% block content %}
+<br>
+<h3>Upload Data</h3><br>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" required name="files">
+    <br><br>
+    <a href="/catalystcount/Adduser"><input style="margin-right: 16px" class="btn btn-primary" type="button" value="Start Upload"></a>
+</form>
+
+{% if data_to_display %}
+<div>
+    <h2>Uploaded Data</h2>
+    {{ data_to_display | safe }}
+</div>
+{% endif %}
+{% endblock %}

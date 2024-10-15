@@ -1,0 +1,33 @@
+{% extends './base.html' %}
+{% block content %}
+<div class="container" style="display: flex;align-items: center;justify-content: center;margin-top: 100px;">
+    <div class='jumbotron' style='width: 75%; '>
+
+        <div style="margin-bottom: 40px;"><h1>Query Builder</h1></div>
+
+        <form method='POST' action='/fileupload/'>
+            {% csrf_token %}
+
+            <div class="form-group row">
+                <div class='col-sm-5'>
+                    <input type="text" class="form-control" id="user_name" placeholder='user_name' name="user_name">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class='col-sm-5'>
+                    <input type="text" class="form-control" id="email_id" placeholder='email_id' name="email_id">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class='col-sm-5'>
+                    <input type="text" class="form-control" id="active" placeholder='active' name="active">
+                </div>
+                </div>
+                <a href="/catalystcount/viewdata"><input style="margin-right: 16px" class="btn btn-primary" type="button" value="Query Date"></a>
+        </form>
+    </div>
+</div>
+{% endblock %}

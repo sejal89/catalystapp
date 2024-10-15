@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+{% block content %}
+    <div style="margin-top: 50px;">
+        <nav class="navbar navbar-expand-sm navbar-white bg-white">
+            <div class="container-fluid">
+            <form class="d-flex ms-auto order-2">
+                <a href="/catalystcount/Adduser"><input style="margin-right: 16px" class="btn btn-primary" type="button" value="Add Users"></a>
+            </form>
+            </div>
+        </nav>
+        <center><h2> Users </h2></center>
+        <table class="table table-striped" style="width: 90%;margin-left:75px ;margin-top: 30px;">
+            <tbody>
+                {% for p in persons %}
+                    <tr>
+                        <td>{{p.user_name}}</td>
+                        <td>{{p.email_id}}</td>
+                        <td>{{p.active}}</td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
